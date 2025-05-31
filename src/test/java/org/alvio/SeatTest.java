@@ -6,6 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class SeatTest {
 
     @Test
+    void testSeat() {
+        Seat seat = new Seat(3, 5);
+        assertEquals(3, seat.getRow());
+        assertEquals(5, seat.getNumber());
+    }
+
+    @Test
     void newSeatShouldNotBeReserved() {
         Seat seat = new Seat(33, 1);
         assertFalse(seat.isReserved());

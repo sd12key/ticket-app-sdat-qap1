@@ -1,5 +1,8 @@
 package org.alvio;
 
+/**
+ * represents a seat in the theatre @ row and @ number, and whether it is reserved.
+ */
 public class Seat {
     private final int row;
     private final int number;
