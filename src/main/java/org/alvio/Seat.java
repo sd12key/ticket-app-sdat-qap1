@@ -33,4 +33,9 @@ public class Seat {
     public void cancelReservation() {
         this.reserved = false;
     }
+
+    public String toString() {
+        return "(Row " + this.row + ", Seat " + this.number + ")";
+    }
+
 }
