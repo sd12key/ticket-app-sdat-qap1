@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MainMenu {
 
-    private static final String TITLE = "\n=== Movie Theatre Reservation System ===";
+    private static final String TITLE = "\n=== Theatre Ticket Reservation App ===";
     private static final String MENU_OPTIONS = """
             (1) Reserve a seat
             (2) Cancel seat reservation
@@ -21,7 +21,7 @@ public class MainMenu {
     private static final String SEAT_INVALID_POSITION = "<!> Invalid seat position.";
     private static final String SEAT_RESERVED_SUCCESS = " reserved successfully.";
     private static final String SEAT_ALREADY_RESERVED = " is already reserved.";
-    private static final String SEAT_CANCEL_SUCCESS = "Reservation canceled.";
+    private static final String SEAT_CANCEL_SUCCESS = " reservation canceled.";
     private static final String SEAT_NOT_RESERVED = " was not reserved.";
     private static final String SEAT_AVAILABLE = " is available.";
     private static final String SEAT_NEARBY_AVAILABILITY = "Nearby available seats: ";
@@ -62,10 +62,7 @@ public class MainMenu {
 
     private void handleReserveSeat() {
         Integer row = Utils.getValidInput(scanner, INPUT_ROW, 1, theatre.getNumberOfRows(), false);
-        if (row == null) return;
-
         Integer seat = Utils.getValidInput(scanner, INPUT_SEAT, 1, theatre.getSeatsPerRow(), false);
-        if (seat == null) return;
 
         Boolean result = theatreService.reserveSeat(row, seat);
         if (result == null) {
@@ -79,10 +76,7 @@ public class MainMenu {
 
     private void handleCancelReservation() {
         Integer row = Utils.getValidInput(scanner, INPUT_ROW, 1, theatre.getNumberOfRows(), false);
-        if (row == null) return;
-
         Integer seat = Utils.getValidInput(scanner, INPUT_SEAT, 1, theatre.getSeatsPerRow(), false);
-        if (seat == null) return;
 
         Boolean result = theatreService.cancelReservation(row, seat);
         if (result == null) {
@@ -96,10 +90,7 @@ public class MainMenu {
 
     private void handleCheckAvailability() {
         Integer row = Utils.getValidInput(scanner, INPUT_ROW, 1, theatre.getNumberOfRows(), false);
-        if (row == null) return;
-
         Integer seat = Utils.getValidInput(scanner, INPUT_SEAT, 1, theatre.getSeatsPerRow(), false);
-        if (seat == null) return;
 
         Boolean result = theatreService.isSeatAvailable(row, seat);
         if (result == null) {
