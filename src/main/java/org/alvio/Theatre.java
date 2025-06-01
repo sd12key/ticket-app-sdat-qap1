@@ -7,8 +7,10 @@ import static org.alvio.Utils.isIntegerWithinBounds;
  * rows and seats are 1-based.
  */
 public class Theatre {
-    public static final int MAX_ROWS = 30;
-    public static final int MAX_SEATS_PER_ROW = 30;
+    public static final int MAX_ROWS = 100;
+    public static final int MAX_SEATS_PER_ROW = 100;
+    public static final int DEFAULT_ROWS = 20;
+    public static final int DEFAULT_MAX_SEATS_PER_ROW = 30;
 
     public static final String ERROR_INVALID_DIMENSIONS =
             "Theatre dimensions must be > 0 and ≤ " + MAX_ROWS + " rows and " + MAX_SEATS_PER_ROW + " seats per row.";
@@ -62,4 +64,9 @@ public class Theatre {
     public int getSeatsPerRow() {
         return this.seatsPerRow;
     }
+
+    public String toString() {
+        return "(" + this.numberOfRows + " Rows, " +  + this.seatsPerRow + " Seats per row )";
+    }
+
 }
