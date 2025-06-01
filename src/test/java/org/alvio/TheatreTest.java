@@ -20,7 +20,7 @@ class TheatreTest {
         assertEquals(Theatre.ERROR_INVALID_DIMENSIONS, ex1.getMessage());
 
         IllegalArgumentException ex2 = assertThrows(IllegalArgumentException.class, () ->
-                new Theatre(3, -1)
+                new Theatre(3, Theatre.MAX_SEATS_PER_ROW + 1)
         );
         assertEquals(Theatre.ERROR_INVALID_DIMENSIONS, ex2.getMessage());
     }
